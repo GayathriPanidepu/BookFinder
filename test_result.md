@@ -137,15 +137,18 @@ frontend:
 
   - task: "Book Cards Display"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/components/BookCard.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
         comment: "Need to test book cards showing covers, fallback display, author/year info, subject badges, and View Details button"
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED: Book cards display correctly with cover images, book titles, author information, publication years, star ratings (when available), subject badges, and 'View Details' buttons. Fallback display works for books without covers. Hover states function properly."
 
   - task: "Book Detail Modal"
     implemented: true
