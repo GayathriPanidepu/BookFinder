@@ -19,20 +19,21 @@ const Home = () => {
   const [selectedBook, setSelectedBook] = useState(null);
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
   const [isFavoritesModalOpen, setIsFavoritesModalOpen] = useState(false);
-  const [favorites, setFavorites] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
-
-  // Load favorites from localStorage on mount
-  useEffect(() => {
+  
+  // Initialize favorites from localStorage
+  const [favorites, setFavorites] = useState(() => {
     const storedFavorites = localStorage.getItem(FAVORITES_STORAGE_KEY);
     if (storedFavorites) {
       try {
-        setFavorites(JSON.parse(storedFavorites));
+        return JSON.parse(storedFavorites);
       } catch (error) {
         console.error('Error loading favorites:', error);
+        return [];
       }
     }
-  }, []);
+    return [];
+  });
 
   // Save favorites to localStorage whenever they change
   useEffect(() => {
