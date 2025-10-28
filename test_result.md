@@ -152,15 +152,18 @@ frontend:
 
   - task: "Book Detail Modal"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/frontend/src/components/BookDetailModal.jsx"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "testing"
         comment: "Need to test modal opening, large cover display, metadata display, and Add to Favorites functionality"
+      - working: true
+        agent: "testing"
+        comment: "✅ PASSED: Book detail modal opens correctly when clicking book cards, displays large cover images, shows all metadata (title, author, publication year, pages, rating, publisher, ISBN, subjects), and Add to Favorites button works correctly (changes to 'Remove from Favorites' after adding). Modal closes properly with Escape key."
 
   - task: "Favorites Feature"
     implemented: true
